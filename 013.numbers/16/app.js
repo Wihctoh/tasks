@@ -2,8 +2,7 @@
 // 	же результат – число с плавающей точкой, то округлить до 2 знаков после запятой).
 
 const a = +prompt("введите число");
-const b = +a.toFixed(2)
-const c = Math.sqrt(b);
+const c = Math.sqrt(a);
+const b = +c.toFixed(2);
 
-console.log(c);
 console.log(b);

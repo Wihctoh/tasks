@@ -4,7 +4,7 @@
 const a = +prompt("введите число");
 
 if (a % 2 == 0) {
-  console.log("четное");
+  console.log("true");
 } else {
-  console.log("не четное");
+  console.log("false");
 }
