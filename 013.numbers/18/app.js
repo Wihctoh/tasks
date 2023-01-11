@@ -4,4 +4,4 @@
 const a = +prompt("введите число");
 const b = Math.sqrt(a);
 
-console.log(Math.floor(b));
+console.log(Math.round(b));
