@@ -2,12 +2,13 @@
 // вывести его. В противном случае необходимо округлить число до целых. Добавить
 // проверку на ввод только чисел
 
-const a = prompt("введите число");
-const b = Math.sqrt(a);
+let a = prompt("введите число");
 
 if (isNaN(a)) {
   console.log("ошибка");
 } else {
+  a = +a;
+  const b = Math.sqrt(a);
   if (Number.isInteger(b)) {
     console.log(b);
   } else {
