@@ -12,7 +12,11 @@ const x1 = +((-b + Math.sqrt(discr)) / (2 * a)).toFixed(3);
 const x2 = +((-b - Math.sqrt(discr)) / (2 * a)).toFixed(3);
 
 if (discr > 0) {
-  console.log(x2, x1);
+  if (x1 > x2) {
+    console.log(x2, x1);
+  } else {
+    console.log(x1, x2);
+  }
 } else if (discr < 0) {
   console.log("действительных корней нет");
 } else if (discr == 0) {
