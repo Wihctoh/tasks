@@ -6,4 +6,12 @@
 
 const a = prompt("введите строку");
 
-console.log(a.trim());
+if (isNaN(a)) {
+  let b = a.trim();
+  let c = b.toLowerCase();
+  let d = c.split("");
+
+  console.log(d.join("-"));
+} else {
+  console.log("введите строку!");
+}
