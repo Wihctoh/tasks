@@ -5,9 +5,9 @@
 let a = prompt("введите число от 0 до 10");
 let b = prompt("введите число от 0 до 10");
 
-if (isNaN(a)) {
+if (isNaN(a) || isNaN(b)) {
   console.log("введите число");
-} else if (a >= 0 && a <= 10 && b <= 10) {
+} else if (a >= 0 && a <= 10 && b <= 10 && b >= 0) {
   a = +a;
   b = +b;
   if (a == 0) {
