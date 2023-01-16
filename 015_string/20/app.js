@@ -9,18 +9,7 @@ for (let i = 0; i < str.length; i++) {
     str[i] == "e" ||
     str[i] == "i" ||
     str[i] == "o" ||
-    str[i] == "u" ||
-    str[i] == "y" ||
-    str[i] == "ё" ||
-    str[i] == "е" ||
-    str[i] == "ю" ||
-    str[i] == "я" ||
-    str[i] == "ы" ||
-    str[i] == "э" ||
-    str[i] == "и" ||
-    str[i] == "о" ||
-    str[i] == "у" ||
-    str[i] == "а"
+    str[i] == "u"
   ) {
     count += 1;
   }

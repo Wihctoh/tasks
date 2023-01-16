@@ -7,5 +7,7 @@ const str = prompt("введите строку").toLowerCase();
 
 if (isNaN(str)) {
   let sliceString = str.split(" ").slice(1);
-  console.log(str.length, sliceString, sliceString[1]);
+
+  console.log(str.indexOf(sliceString[0]));
+  console.log(str.length, sliceString);
 } else console.log("error");
