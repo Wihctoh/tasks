@@ -5,11 +5,10 @@ const url = prompt("введите url").toLowerCase().trim();
 
 if (isNaN(url)) {
   if (
-    url.includes("http") ||
-    url.includes("/") ||
-    url.includes(".com") ||
-    url.includes(".ru")
+    (url.startsWith("http") && url.endsWith(".com")) ||
+    url.endsWith(".ru") ||
+    url.includes("/")
   ) {
     console.log(true);
-  } else false;
+  } else console.log(false);
 } else console.log("error");
