@@ -9,7 +9,7 @@ const str = "abc_qwe_asd_bcd_".trim().toUpperCase().split("_");
 let result = "";
 
 for (let i = 0; i < str.length - 1; i++) {
-  result = `${result} ${str.slice(1)[i].slice(1)}`;
+  result = `${result}${str.slice(1)[i].slice(1)}`;
 }
 
 console.log(str[0] + result);
