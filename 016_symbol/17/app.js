@@ -5,11 +5,7 @@
 // const str = prompt('').trim().toUpperCase();
 // let b = str.slice(1);
 
-const str = "abc_ qwe_ asd_"
-  .trim()
-  .toUpperCase()
-  .replaceAll("_", "")
-  .split(" ");
+const str = "abc_qwe_asd_bcd_".trim().toUpperCase().split("_");
 let result = "";
 
 for (let i = 0; i < str.length - 1; i++) {

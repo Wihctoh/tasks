@@ -1,10 +1,7 @@
 // Найдите квадратный корень числа. Результат округлите до целых, десятых, сотых.
 
-const number = 49.2528;
+const number = Math.sqrt(49.9528);
 
-console.log(Math.sqrt(Math.floor(number)));
-console.log(Math.sqrt(Math.floor(number)).toFixed(1));
-console.log(Math.sqrt(Math.floor(number)).toFixed(2));
-console.log(Math.sqrt(Math.floor(number)).toFixed(3));
-
-console.log(Math.fround(number));
+console.log(Math.round(number));
+console.log(+(Math.ceil(number * 10) / 10).toFixed(1));
+console.log(Math.ceil(number * 100) / 100);
