@@ -2,7 +2,7 @@
 // символы в строке
 // hschoolofficial -> hscolfia
 
-const str = "hschoolofficial";
+const str = "hschoolofficialaaasss";
 let result = "";
 
 for (let i = 0; i < str.length; i++) {
