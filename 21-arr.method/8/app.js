@@ -2,10 +2,10 @@
 // массива с клавиатуры. Если все элементы массива – числа, то вывести логическое
 // true, в противном случае false. Every, forEach
 
-const num = 5;
+const num = 3;
 const arr = [];
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 3; i++) {
   let pr = prompt("введите число");
   arr.push(pr);
 }
@@ -16,10 +16,12 @@ arr.forEach(function (el) {
   } else console.log(false);
 });
 
-// const result = arr.every(function (el) {
-//   if (!isNaN(el)) {
-//     console.log(true);
-//   } else console.log(false);
-// });
+const result = arr.every(function (el) {
+  if (!isNaN(el)) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
-// console.log(arr);
+console.log(result);
