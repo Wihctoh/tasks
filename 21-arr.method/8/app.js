@@ -5,7 +5,7 @@
 const num = 3;
 const arr = [];
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < num; i++) {
   let pr = prompt("введите число");
   arr.push(pr);
 }
