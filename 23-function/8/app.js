@@ -3,13 +3,13 @@
 // Если результат функции проверки – true, то вызывать новую функцию,
 // возвращающую конкатенацию всех строчных элементов массива
 
-const arr = ["a", "b", "c"];
+const arr = ["a", "b", "c", " "];
 
 function isStr(arr_) {
   let res = arr_.every(function (el) {
     if (isNaN(el)) {
       return true;
-    } else false;
+    } else return false;
   });
 
   return res;
