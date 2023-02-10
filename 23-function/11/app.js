@@ -1,26 +1,23 @@
-// На входе число. Необходимо создать функцию, возвращающую факториал числа
+// 11. На входе число. Необходимо создать функцию, возвращающую факториал числа
 // 4! = 1 * 2 * 3 * 4
 
-const num = 4;
+const a = 4;
+function isValid(number_) {
+  return typeof number_ == "number" ? true : false;
+}
 
-function fact(num_) {
-  const bool = isValid(num_);
-  let res = 1;
+function fact(number_) {
+  const bool = isValid(number_);
 
-  if (bool === true) {
-    for (let i = 1; i <= num_; i++) {
-      res *= i;
+  if (bool == true) {
+    let count = 1;
+
+    for (let i = 1; i <= number_; i++) {
+      count *= i;
     }
-    return res;
-  } else return "error";
+    return count;
+  } else "error";
 }
+const res = fact(a);
 
-function isValid(num_) {
-  if (typeof num_ == 'Number') {
-    return true;
-  } else return false;
-}
-
-let result = fact(num);
-
-console.log(result);
+console.log(res);
