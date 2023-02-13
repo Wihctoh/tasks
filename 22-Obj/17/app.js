@@ -10,4 +10,11 @@ for (let elem of arr) {
     count[elem]++;
   }
 }
-console.log(count);
+
+let arr1 = [];
+
+for (const key in count) {
+  arr1.push(count[key]);
+}
+
+console.log(Math.max.apply(null, arr1));
