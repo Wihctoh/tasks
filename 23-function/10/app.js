@@ -28,4 +28,4 @@ let evenArr = even(arr);
 
 if (isNum(arr) === true) {
   console.log(evenArr);
-}
+} else console.log('error');
