@@ -1,15 +1,13 @@
 // Найти значение массива, повторяющееся в нем наибольшее количество раз
 
 const arr = [1, 2, 2, 2, 3, 4, 5, 5].sort();
-let res = [];
-let count = 0;
+let count = {};
 
-for (let i = 0; i < arr.length; i++) {
-  arr.forEach(function (el) {
-    if (!res.includes(el)) {
-      res.push(el);
-    }
-  });
+for (let elem of arr) {
+  if (count[elem] === undefined) {
+    count[elem] = 1;
+  } else {
+    count[elem]++;
+  }
 }
-
-console.log(res);
+console.log(count);
