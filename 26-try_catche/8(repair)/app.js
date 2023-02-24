@@ -3,51 +3,24 @@
 // ["a","b","c","d","f"] -> "e"
 // ["O","Q","R","S"] -> "P" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! требует доработки
 
-const arrWord = ["a", "b", "c", "d", "f"];
-const arrWord1 = ["O", "Q", "R", "S"];
+const arrLetter1 = ["a", "b", "c", "d", "f"];
+const arrLetter2 = ["O", "Q", "R", "S"];
 
-function doWords(arrWord_) {
+function doWords(arrLetter_) {
   try {
-    let arr = [
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-      "g",
-      "h",
-      "i",
-      "j",
-      "k",
-      "l",
-      "m",
-      "n",
-      "o",
-      "p",
-      "q",
-      "r",
-      "s",
-      "t",
-      "u",
-      "v",
-      "w",
-      "x",
-      "y",
-      "z",
-    ];
-    let resArr = [];
+    let alphabet = "abcdefghijklmnopqistuvwxyz";
+    let sliceArr = [];
 
-    for (let i = 0; i < arrWord_.length; i++) {
-      if (!arrWord_.includes(arr[i])) {
-        resArr.push(arr[i]);
+    for (let i = 0; i < alphabet.length; i++) {
+      if (arrLetter_.includes(alphabet[i])) {
+        sliceArr.push(alphabet[i]);
       }
     }
-    return resArr;
+    return sliceArr;
   } catch (error) {
     return error.message;
   }
 }
-let result = doWords(arrWord);
+let result = doWords(arrLetter1);
 
 console.log(result);
