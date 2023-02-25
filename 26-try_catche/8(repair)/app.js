@@ -4,24 +4,22 @@
 // ["O","Q","R","S"] -> "P"
 
 const arrLetter1 = ["a", "b", "c", "d", "f"];
-const arrLetter2 = ["O", "Q", "I", "S"].join("").toLowerCase().split("");
+const arrLetter2 = ["O", "Q", "I", "S"].join("").toLowerCase();
 
 function doWords(arrLetter_) {
   try {
     let alphabet = "abcdefghijklmnopqistuvwxyz";
     let firstLetter = alphabet.indexOf(arrLetter_[0]);
-    let lastLetter = alphabet.lastIndexOf(arrLetter_[arrLetter_.length-1]);
-    let sliceArr = "";
-    let resArr = [];
+    let sliceArr = alphabet.slice(
+      firstLetter,
+      firstLetter + arrLetter_.length + 1
+    );
 
-    sliceArr += alphabet.slice(firstLetter, lastLetter);
-
-    console.log(arrLetter_);
-    console.log(sliceArr);
-
-    // for (let i = 0; i < sliceArr.length ; i++) {
-      
-    // }
+    for (let i = 0; i < sliceArr.length; i++) {
+      if (sliceArr[i] != arrLetter_[i]) {
+        return sliceArr[i];
+      }
+    }
     return resArr;
   } catch (error) {
     return error.message;
