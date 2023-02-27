@@ -10,3 +10,28 @@
 // Добавить проверку, что номера домов – только числа.
 // [5, 1, 2, 3, 0, 1, 5, 0, 2] –> 11 (5 + 1 + 2 + 3 = 11)
 
+let arr = [5, 1, 2, 3, 0, 1, 5, 0, 2];
+
+function countBuild(arr_) {
+  try {
+    let resArr = [];
+
+    for (let el of arr_) {
+      if (el == 0) {
+        break;
+      } else resArr.push(el);
+    }
+
+    let sum = resArr.reduce(function (sum, el) {
+      return sum + el;
+    }, 0);
+
+    return sum;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+let result = countBuild(arr);
+
+console.log(result);
