@@ -5,14 +5,15 @@
 
 document.querySelector("button").addEventListener("click", function () {
   const inp = document.querySelector("input");
-  const tr = document.querySelectorAll("tr");
+  const tableBody = document.querySelector("tbody");
+  let tableTr = document.querySelectorAll("tr");
+  let tableTd = document.querySelectorAll("td");
+  let addTr = document.createElement("tr");
+  let addTd = document.createElement("td");
 
-  let trEl = document.createElement("tr");
-  let tdEl = document.createElement("td");
-
-  tr[1].after(trEl);
-
-  for (let i = 2; i < tr.length; i++) {
-    tr[i].insertAdjacentElement = tdEl;
-  }
+  tableTr.forEach(function (el,index) {
+    tableBody.append(addTr);
+    el.append(addTd);
+    el.innerHTML = inp.value;
+  });
 });
