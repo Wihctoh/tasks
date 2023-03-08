@@ -4,14 +4,20 @@
 // значение в таблицу.
 
 document.querySelector("button").addEventListener("click", function () {
-  const inp = document.querySelector("input");
-  const tableBody = document.querySelector("tbody");
-  let addTr = document.createElement("tr");
-  let addTd = document.createElement("td");
+  try {
+    const inp = document.querySelector("input");
+    const tableBody = document.querySelector("tbody");
+    let addTr = document.createElement("tr");
+    let addTd = document.createElement("td");
 
-  addTd.innerHTML = inp.value;
+    if (!inp.value) throw new Error("empty");
 
-  tableBody.appendChild(addTr);
-  addTr.appendChild(addTd);
-  inp.value = "";
+    addTd.innerHTML = inp.value;
+
+    tableBody.appendChild(addTr);
+    addTr.appendChild(addTd);
+    inp.value = "";
+  } catch (error) {
+    alert(error.message);
+  }
 });
