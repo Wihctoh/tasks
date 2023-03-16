@@ -5,7 +5,7 @@
 class Validator {
   isEmail(str) {
     try {
-      if (!/^\w+\@[a-z]+\.[a-z]{2,}$/gm.test(str)) throw new Error(false);
+      if (!/^\w.+\@[a-z]+\.[a-z]{2,}$/gm.test(str)) throw new Error(false);
       return true;
     } catch (error) {
       return error.message;
