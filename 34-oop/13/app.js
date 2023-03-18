@@ -24,6 +24,7 @@ class ServerPost {
 
     return middl;
   }
+
   controller(obj) {
     try {
       let contr = this.service(obj);
@@ -33,11 +34,13 @@ class ServerPost {
       return error.message;
     }
   }
+
   service(obj) {
     let serv = this.repository(obj);
 
     return serv;
   }
+
   repository(obj) {
     const arr = [
       {
@@ -67,10 +70,8 @@ class ServerPost {
       { id: "go", label: "GO", category: "programmingLanguages", priority: 3 },
     ];
 
-    const filterArr = arr.filter(function (el) {
-      el.label == obj.label ? true : null;
-    });
-    return arr;
+    const filterArr = arr.filter((el) => (el.label == obj.label ? true : null));
+    return filterArr;
   }
 }
 
