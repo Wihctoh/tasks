@@ -71,7 +71,18 @@ class ServerPost {
     ];
 
     const filterArr = arr.filter((el) => (el.label == obj.label ? true : null));
-    return filterArr;
+
+    if (filterArr.length == 0) {
+      const objToArr = Object.entries(obj);
+
+      objToArr.unshift(["id", "javascript"]);
+
+      let resultObj = Object.fromEntries(objToArr);
+
+      arr.push(resultObj);
+    } else throw new Error("data error!");
+
+    return arr;
   }
 }
 
