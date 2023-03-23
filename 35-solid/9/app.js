@@ -34,4 +34,4 @@ class Conversation {
 
 const conversation = new Conversation();
 
-console.log(conversation.doDecimalNumber(6));
+console.log(conversation.doDecimalNumber(375));
