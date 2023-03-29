@@ -33,7 +33,7 @@ class Validation extends StringValue {
   }
 }
 
-const validation = new Validation("123", "123");
+const validation = new Validation("abc", "123");
 
 let res = validation.checkValue();
 
