@@ -13,6 +13,6 @@ function doCount() {
 const resultFunc = doCount();
 
 resultFunc(1);
-resultFunc(1);
+resultFunc(2);
 resultFunc(1);
 resultFunc(1);
