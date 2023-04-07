@@ -2,7 +2,7 @@
 // элемент к нижнему регистру. Повторить строку 3 раза. Добавить проверку на ввод
 // только текстовых значений
 
-const str = prompt("введите строку").trim().toLowerCase().repeat(3);
+const str = prompt("enter string").trim().toLowerCase().repeat(3);
 
 if (isNaN(str)) {
   console.log(str);
