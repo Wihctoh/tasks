@@ -2,7 +2,7 @@
 // массива с клавиатуры. Если все элементы массива – числа, то вывести логическое
 // true, в противном случае false. Every, forEach
 
-const num = 3;
+const num = 5;
 const arr = [];
 
 for (let i = 0; i < num; i++) {
