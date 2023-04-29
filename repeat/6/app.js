@@ -43,6 +43,8 @@ class Server {
       { id: 5, email: "maria@mail.ru", pwd: "pwdfcel" },
     ];
 
+    
+
     const filtered = data.filter((el) => el.email === getLogPass.email);
 
     if (filtered.length > 0) throw new Error("alredy includes");
@@ -51,6 +53,15 @@ class Server {
 
     return data;
   }
+}
+
+const pwd = "abec";
+
+const str = "abcdefghijklmnopqrstuvwxyzabc";
+let newPwd = "";
+
+for (let i = 0; i < pwd.length; i++) {
+  newPwd += str[str.indexOf(pwd[i]) + 2];
 }
 
 const getLogPass = {
