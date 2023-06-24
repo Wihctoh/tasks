@@ -1,4 +1,4 @@
 // Напишите программу, которая проверяет, является ли заданное число num
 // четным или нечетным.
-var num = +prompt();
+const num = +prompt();
 console.log(num % 2 === 0 ? true : false);

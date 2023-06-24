@@ -1,7 +1,7 @@
 // Создайте переменную grade и присвойте ей значение от 1 до 5. Используя
 // оператор switch, выведите в консоль описание оценки (например, "Отлично",
 // "Хорошо" и т.д.) в зависимости от значения переменной grade.
-var grade = Math.round(Math.random() * 5);
+const grade = Math.round(Math.random() * 5);
 console.log(grade);
 switch (grade) {
     case 1:

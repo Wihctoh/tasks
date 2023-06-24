@@ -1,8 +1,8 @@
 // Напишите программу, которая находит факториал заданного числа num и
 // выводит результат в консоль.
-var count1 = 1;
-var youNum = +prompt();
-for (var i_1 = 1; i_1 <= youNum; i_1++) {
-    count1 *= i_1;
+let count1 = 1;
+let youNum = +prompt();
+for (let i = 1; i <= youNum; i++) {
+    count1 *= i;
 }
 console.log(count1);
