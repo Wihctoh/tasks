@@ -4,5 +4,3 @@
 const str5: string = "qqwwweeerrrrr";
 const sorted = str5.split("").sort();
 let count2: number = 0;
-
-

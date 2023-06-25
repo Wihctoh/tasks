@@ -4,7 +4,8 @@
 const str123: string = "anna";
 const str321: string = "aann";
 
-const newStr123: any = str123.split("").sort().join("");
-const newStr321: any = str321.split("").sort().join("");
-
-console.log(newStr123 === newStr321 ? true : false);
+console.log(
+  str123.split("").sort().join("") === str321.split("").sort().join("")
+    ? true
+    : false
+);
