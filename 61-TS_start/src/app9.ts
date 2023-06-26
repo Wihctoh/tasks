@@ -2,5 +2,15 @@
 // символ в заданной строке.
 
 const str5: string = "qqwwweeerrrrr";
-const sorted = str5.split("").sort();
-let count2: number = 0;
+const obj = {};
+
+for (let i = 0; i < str5.length; i++) {
+  if (obj[str5[i]]) {
+    obj[str5[i]] += 1;
+  } else {
+    obj[str5[i]] = 1;
+  }
+}
+
+console.log(obj);
+
