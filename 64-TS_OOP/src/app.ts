@@ -215,4 +215,57 @@
 
 // circleR.getArea();
 
+//9. Создайте класс CircleC, который содержит свойство radius (радиус круга) и метод
+// getCircumference() (вычисление длины окружности). Создайте экземпляр класса
+// CircleC и выведите длину окружности. Длина окружности: 2 * π * r
 
+// interface iCircleR {
+//   radius: number;
+//   getCircumference(): void;
+// }
+
+// class CircleR {
+//   public radius: number = 3;
+
+//   getCircumference(): void {
+//     console.log(2 * 3.14 * this.radius);
+//   }
+// }
+
+// const circleR: iCircleR = new CircleR();
+
+// circleR.getCircumference();
+
+// 10. Создайте класс Product, который содержит свойства name (название продукта) и
+// price (цена продукта). Реализуйте метод displayProductInfo(), который выводит
+// массив продуктов, где цена > 20. Создайте экземпляр класса Product и вызовите
+// метод displayProductInfo().
+interface iProduct {
+  name: string[];
+  price: number[];
+  displayProductInfo(): void;
+}
+
+class Product {
+  public name: string[];
+  public price: number[];
+
+  displayProductInfo() {
+    const res: string[] = [];
+
+    for (let i = 0; i < this.name.length; i++) {
+      if (this.price[i] > 20) {
+        res.push(`this prod ${this.name[i]} price: ${this.price[i]}`);
+      }
+    }
+
+    console.log(res);
+  }
+}
+
+const product: iProduct = new Product();
+
+product.name = ["qwe", "asd", "zxc"];
+product.price = [100, 2, 300];
+
+product.displayProductInfo();

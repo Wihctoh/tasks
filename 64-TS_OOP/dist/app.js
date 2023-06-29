@@ -5,11 +5,20 @@
 //   name: string;
 //   age: string;
 // }
-class CircleR {
-    radius = 2;
-    getArea() {
-        console.log(3.14 * this.radius ** 2);
+class Product {
+    name;
+    price;
+    displayProductInfo() {
+        const res = [];
+        for (let i = 0; i < this.name.length; i++) {
+            if (this.price[i] > 20) {
+                res.push(`this prod ${this.name[i]} price: ${this.price[i]}`);
+            }
+        }
+        console.log(res);
     }
 }
-const circleR = new CircleR();
-circleR.getArea();
+const product = new Product();
+product.name = ["qwe", "asd", "zxc"];
+product.price = [100, 2, 300];
+product.displayProductInfo();
