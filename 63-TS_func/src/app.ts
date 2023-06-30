@@ -220,24 +220,65 @@
 // 9. Напишите код, который сделает из массива объект
 // [ {name: 'width', value: 10}, {name: 'height', value: 20} ] -> {width: 10, height: 20}
 
-interface iStyle {
-  name: string;
-  value: number;
+// interface iStyle {
+//   name: string;
+//   value: number;
+// }
+
+// const obj: iStyle[] = [
+//   { name: "width", value: 10 },
+//   { name: "height", value: 20 },
+// ];
+
+// function doSmth(obj: iStyle[]) {
+//   const objRes = {};
+
+//   for (let i = 0; i < obj.length; i++) {
+//     objRes[obj[i].name] = obj[i].value;
+//   }
+
+//   return objRes;
+// }
+
+// console.log(doSmth(obj));
+
+// 10. У вас есть массив объектов вида приведенного в приложении. Пользователь
+// вводит значение id: например, 1. Необходимо отобразить в консоль найденный
+// объект используя алгоритм бинарного поиска.
+
+// interface iStock {
+//   id: number;
+//   title: string;
+//   count: number;
+//   price: number;
+// }
+
+// const arrTask: iStock[] = [
+//   { id: 1, title: "Часы", count: 10, price: 500 },
+//   { id: 2, title: "Смартфон", count: 33, price: 1500 },
+//   { id: 3, title: "Моноблок", count: 6, price: 2200 },
+//   { id: 4, title: "Ноутбук", count: 13, price: 3000 },
+//   { id: 5, title: "Планшет", count: 22, price: 2100 },
+// ];
+
+// 11. У вас есть массив строковых значений. Необходимо вывести количество
+// дубликатов в массиве:
+// [1, 2, 1, 2, 3, 4, 5, 1] -> 3
+
+const str = [1, 2, 1, 2, 3, 4, 5, 1].sort();
+const obj = {};
+
+function duplicate(str) {
+  for (let i = 0; i < str.length; i++) {}
 }
+duplicate(str);
 
-const obj: iStyle[] = [
-  { name: "width", value: 10 },
-  { name: "height", value: 20 },
-];
+console.log(obj);
 
-function doSmth(obj: iStyle[]) {
-  const objRes = {};
-
-  for (let i = 0; i < obj.length; i++) {
-    objRes[obj[i].name] = obj[i].value;
-  }
-
-  return objRes;
-}
-
-console.log(doSmth(obj));
+// 11. У вас есть массив строковых значений. Необходимо вывести количество
+// дубликатов в массиве:
+// [1, 2, 1, 2, 3, 4, 5, 1] -> 3
+// 12. Реализовать функцию f: при вызове f(2, 3) -> вернет 5, при вызове f(2)(3), тоже
+// вернет 5. Использовать каррирование
+// 13. Реализовать функцию f: при вызове f(1, 2, 3) -> вернет 6, при вызове f(1)(2)(3)(), тоже
+// вернет 6. Использовать каррирование
