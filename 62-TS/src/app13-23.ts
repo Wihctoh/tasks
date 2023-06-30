@@ -152,17 +152,40 @@
 // 22. Создайте массив объектов, представляющих сотрудников, с полями "имя" и
 // "зарплата". Найдите среднюю зарплату всех сотрудников.
 
+// interface iArrObj {
+//   name: string;
+//   salary: number;
+// }
+
+// const arrObj: iArrObj[] = [
+//   { name: "Kate", salary: 100 },
+//   { name: "Jack", salary: 200 },
+//   { name: "Vito", salary: 300 },
+// ];
+
+// const resuledSal: number = arrObj.reduce((sum, el) => el.salary + sum, 0);
+
+// console.log(`average price is: ${resuledSal / arrObj.length}$`);
+
+// 23. Дан массив объектов с полями "название", "цена" и "количество". Найдите
+// суммарную стоимостью всех товаров учитывая количество каждого.
+// Итог = цена_1_товара * кол-во_1_товара + цена_2_товара * кол-во_2_товара + ...
+
 interface iArrObj {
   name: string;
   salary: number;
+  count: number;
 }
 
 const arrObj: iArrObj[] = [
-  { name: "Kate", salary: 100 },
-  { name: "Jack", salary: 200 },
-  { name: "Vito", salary: 300 },
+  { name: "milk", salary: 100, count: 10 },
+  { name: "bread", salary: 200, count: 15 },
+  { name: "water", salary: 300, count: 20 },
 ];
 
-const resuledSal: number = arrObj.reduce((sum, el) => el.salary + sum, 0);
+const reduceRes: number = arrObj.reduce(
+  (sum, el) => el.salary * el.count + sum,
+  0
+);
 
-console.log(`average price is: ${resuledSal / arrObj.length}$`);
+console.log(reduceRes);
