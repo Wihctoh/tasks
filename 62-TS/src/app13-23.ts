@@ -148,3 +148,21 @@
 // const filtered1 = stringItem.filter((el) => el.length === count);
 
 // console.log(`max length word is ${count} in ${filtered1}`);
+
+// 22. Создайте массив объектов, представляющих сотрудников, с полями "имя" и
+// "зарплата". Найдите среднюю зарплату всех сотрудников.
+
+interface iArrObj {
+  name: string;
+  salary: number;
+}
+
+const arrObj: iArrObj[] = [
+  { name: "Kate", salary: 100 },
+  { name: "Jack", salary: 200 },
+  { name: "Vito", salary: 300 },
+];
+
+const resuledSal: number = arrObj.reduce((sum, el) => el.salary + sum, 0);
+
+console.log(`average price is: ${resuledSal / arrObj.length}$`);
