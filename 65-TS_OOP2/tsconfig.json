@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+			"outDir": "dist",
+			"target": "ES2022",
+			"module": "CommonJS"
+	},
+	"include": [
+			"src/**/*.ts"
+	]
+}
