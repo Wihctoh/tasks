@@ -155,28 +155,44 @@
 // isPalindrome, countVowels. Реализуйте функционал для разворота строки,
 // проверки, является ли строка палиндромом, и подсчета гласных букв в строке.
 // Использовать Generics
-class StringManipulator {
-    reverseString(string) {
-        if (typeof string === "string")
-            return string.split("").reverse().join("");
-    }
-    isPalindrome(string) {
-        if (typeof string === "string")
-            return string.split("").reverse().join("") === string ? true : false;
-    }
-    countVowels(string) {
-        const letters = "aeuio";
-        let count = 0;
-        if (typeof string === "string") {
-            for (let i = 0; i < string.length; i++) {
-                if (letters.includes(string[i]))
-                    count++;
+// class StringManipulator {
+//   reverseString<myType>(string: myType): string {
+//     if (typeof string === "string") return string.split("").reverse().join("");
+//   }
+//   isPalindrome<myType>(string: myType): boolean {
+//     if (typeof string === "string")
+//       return string.split("").reverse().join("") === string ? true : false;
+//   }
+//   countVowels<myType>(string: myType): number {
+//     const letters: string = "aeuio";
+//     let count: number = 0;
+//     if (typeof string === "string") {
+//       for (let i = 0; i < string.length; i++) {
+//         if (letters.includes(string[i])) count++;
+//       }
+//       return count;
+//     }
+//   }
+// }
+// const stringManipulator = new StringManipulator();
+// console.log(stringManipulator.reverseString<string>("qwer"));
+// console.log(stringManipulator.isPalindrome<string>("anna"));
+// console.log(stringManipulator.countVowels<string>("aaeett"));
+// 8. Создайте класс PasswordGenerator, который будет иметь метод generatePassword,
+// позволяющий генерировать случайные безопасные пароли заданной длины.
+// Метод generatePassword принимает в качестве параметра длину пароля.
+// Использовать Generics
+class PasswordGenerator {
+    generatePassword(pwdLength) {
+        const symbols = "qwertyuiopasdfghjklzxcvbnm,./1234567890-=!@#$%^&&*()_+=";
+        let pwd = "";
+        if (typeof pwdLength === "number") {
+            for (let i = 0; i < pwdLength; i++) {
+                pwd += symbols[Math.round(Math.random() * symbols.length)];
             }
-            return count;
+            return pwd;
         }
     }
 }
-const stringManipulator = new StringManipulator();
-console.log(stringManipulator.reverseString("qwer"));
-console.log(stringManipulator.isPalindrome("anna"));
-console.log(stringManipulator.countVowels("aaeett"));
+const passwordGenerator = new PasswordGenerator();
+console.log(passwordGenerator.generatePassword(5));
