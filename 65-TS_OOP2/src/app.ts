@@ -155,41 +155,76 @@
 // (хначение инициализируется через конструктор класса), методы getAverage,
 // getMax, getMin для вычисления среднего значения, максимального и
 // минимального элементов массива.
-interface iAnalyzer {
-  array: Array<Number>;
-  getAverage(): number;
-  getMax(): number;
-  getMin(): number;
-}
+// interface iAnalyzer {
+//   array: Array<Number>;
+//   getAverage(): number;
+//   getMax(): number;
+//   getMin(): number;
+// }
 
-class ArrayAnalyzer {
-  public array: Array<number> = [];
+// class ArrayAnalyzer {
+//   public array: Array<number> = [];
 
-  constructor(num) {
-    for (let i = 0; i < num; i++) {
-      this.array.push(Math.round(Math.random() * 10));
+//   constructor(num) {
+//     for (let i = 0; i < num; i++) {
+//       this.array.push(Math.round(Math.random() * 10));
+//     }
+//   }
+
+//   getAverage(): number {
+//     const avg = this.array.reduce((sum, el) => sum + el, 0);
+
+//     return avg / this.array.length;
+//   }
+
+//   getMax(): number {
+//     return Math.max(...this.array);
+//   }
+
+//   getMin(): number {
+//     return Math.min(...this.array);
+//   }
+// }
+
+// const arrayAnalyzer = new ArrayAnalyzer(5);
+
+// console.log(
+//   arrayAnalyzer.getAverage(),
+//   arrayAnalyzer.getMax(),
+//   arrayAnalyzer.getMin()
+// );
+
+// 7. Создайте класс StringManipulator, который будет иметь методы reverseString,
+// isPalindrome, countVowels. Реализуйте функционал для разворота строки,
+// проверки, является ли строка палиндромом, и подсчета гласных букв в строке.
+// Использовать Generics
+
+class StringManipulator {
+  reverseString<myType>(string: myType): string {
+    if (typeof string === "string") return string.split("").reverse().join("");
+  }
+
+  isPalindrome<myType>(string: myType): boolean {
+    if (typeof string === "string")
+      return string.split("").reverse().join("") === string ? true : false;
+  }
+
+  countVowels<myType>(string: myType): number {
+    const letters: string = "aeuio";
+    let count: number = 0;
+
+    if (typeof string === "string") {
+      for (let i = 0; i < string.length; i++) {
+        if (letters.includes(string[i])) count++;
+      }
+
+      return count;
     }
   }
-
-  getAverage(): number {
-    const avg = this.array.reduce((sum, el) => sum + el, 0);
-
-    return avg / this.array.length;
-  }
-
-  getMax(): number {
-    return Math.max(...this.array);
-  }
-
-  getMin(): number {
-    return Math.min(...this.array);
-  }
 }
 
-const arrayAnalyzer = new ArrayAnalyzer(5);
+const stringManipulator = new StringManipulator();
 
-console.log(
-  arrayAnalyzer.getAverage(),
-  arrayAnalyzer.getMax(),
-  arrayAnalyzer.getMin()
-);
+console.log(stringManipulator.reverseString<string>("qwer"));
+console.log(stringManipulator.isPalindrome<string>("anna"));
+console.log(stringManipulator.countVowels<string>("aaeett"));
