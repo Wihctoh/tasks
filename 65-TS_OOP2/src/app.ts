@@ -259,54 +259,102 @@
 // Validation. Конструктор принимает поля email, date, path и инициализирует их как
 // поля класса. В каждом методе напишите соответствующую проверку
 
-interface iValidation2 {
-  email: string;
-  date: string;
-  path: string;
+// interface iValidation2 {
+//   email: string;
+//   date: string;
+//   path: string;
+// }
+
+// class iValidation {
+//   email: string;
+//   date: string;
+//   path: string;
+
+//   constructor(email, date, path) {
+//     this.email = email;
+//     this.date = date;
+//     this.path = path;
+
+//     this.isValidDate();
+//     this.isValidEmail();
+//     this.isValidPath();
+//   }
+
+//   private isValidEmail(): void {
+//     console.log(
+//       /^[\w.]+@[a-z]+.[a-z]{2,}$/gm.test(this.email)
+//         ? "valid email"
+//         : "invalid email"
+//     );
+//   }
+
+//   private isValidDate(): void {
+//     console.log(
+//       /^[0-9]{2,2}\/[0-9]{2,2}\/[0-9]{2,2}$/gm.test(this.date)
+//         ? "valid date"
+//         : "invalid date"
+//     );
+//   }
+
+//   private isValidPath() {
+//     console.log(
+//       /^[A-Z]{1}\:\\\\[\a-z\\а-я А-Я]+\.[a-z]{2,4}$/gm.test(this.path)
+//         ? "valid path"
+//         : "invalid path!"
+//     );
+//   }
+// }
+
+// const ivalidation: iValidation2 = new iValidation(
+//   "qwe@fsa.com",
+//   "01/02/23",
+//   "C:\\Users\\Dev\\OneDrive\\Рабочий стол\\daily\\Templates\\05. typescript\\app.js"
+// );
+
+// 10. Создать интерфейс iPwd. Создайте класс Pwd. Pwd хранит функцию showPwd,
+// которая формирует и возвращает рандомно сгенерированный пароль из 8 чисел.
+// Класс Validation является производным по отношению к базовому, родительскому
+// Pwd и содержит функцию showPwd. Необходимо переопределить showPwd из
+// базового класса и записать в переменную используя метод super. Далее
+// дополняем переопределенный метод отображением результата в console
+
+// interface iPwd {}
+
+// class Pwd {
+//   showPwd() {}
+// }
+
+// class Validation extends Pwd {
+//   showPwd() {}
+// }
+
+// const validation = new Validation();
+
+// 12. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
+// controller, service, repository. Цепочка взаимодействия между методами
+// следующая: controller -> service -> repository, где:
+
+interface iServerGetAll {
+  controller(): number[];
+  service(): number[];
+  repository(): number[];
 }
 
-class iValidation {
-  email: string;
-  date: string;
-  path: string;
-
-  constructor(email, date, path) {
-    this.email = email;
-    this.date = date;
-    this.path = path;
-
-    this.isValidDate();
-    this.isValidEmail();
-    this.isValidPath();
+class ServerGetAll {
+  controller(): number[] {
+    return this.service();
   }
 
-  private isValidEmail(): void {
-    console.log(
-      /^[\w.]+@[a-z]+.[a-z]{2,}$/gm.test(this.email)
-        ? "valid email"
-        : "invalid email"
-    );
+  service(): number[] {
+    return this.repository();
   }
 
-  private isValidDate(): void {
-    console.log(
-      /^[0-9]{2,2}\/[0-9]{2,2}\/[0-9]{2,2}$/gm.test(this.date)
-        ? "valid date"
-        : "invalid date"
-    );
-  }
-
-  private isValidPath() {
-    console.log(
-      /^[A-Z]{1}\:\\\\[\a-z\\а-я А-Я]+\.[a-z]{2,4}$/gm.test(this.path)
-        ? "valid path"
-        : "invalid path!"
-    );
+  repository() {
+    const arr: number[] = [1, 2, 3, 4];
+    return arr;
   }
 }
 
-const ivalidation: iValidation2 = new iValidation(
-  "qwe@fsa.com",
-  "01/02/23",
-  "C:\\Users\\Dev\\OneDrive\\Рабочий стол\\daily\\Templates\\05. typescript\\app.js"
-);
+const serverGetAll: iServerGetAll = new ServerGetAll();
+
+console.log(serverGetAll.controller());
