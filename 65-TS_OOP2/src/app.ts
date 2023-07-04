@@ -234,22 +234,79 @@
 // Метод generatePassword принимает в качестве параметра длину пароля.
 // Использовать Generics
 
-class PasswordGenerator {
-  generatePassword<m>(pwdLength: m) {
-    const symbols: string =
-      "qwertyuiopasdfghjklzxcvbnm,./1234567890-=!@#$%^&&*()_+=";
-    let pwd: string = "";
+// class PasswordGenerator {
+//   generatePassword<m>(pwdLength: m) {
+//     const symbols: string =
+//       "qwertyuiopasdfghjklzxcvbnm,./1234567890-=!@#$%^&&*()_+=";
+//     let pwd: string = "";
 
-    if (typeof pwdLength === "number") {
-      for (let i = 0; i < pwdLength; i++) {
-        pwd += symbols[Math.round(Math.random() * symbols.length)];
-      }
+//     if (typeof pwdLength === "number") {
+//       for (let i = 0; i < pwdLength; i++) {
+//         pwd += symbols[Math.round(Math.random() * symbols.length)];
+//       }
 
-      return pwd;
-    }
+//       return pwd;
+//     }
+//   }
+// }
+
+// const passwordGenerator = new PasswordGenerator();
+
+// console.log(passwordGenerator.generatePassword<number>(5));
+
+// 9. Создать интерфейс iValidation. Создайте класс Validation с приватными методами
+// isValidEmail, isValidDate, isValidPath, вызывающиеся через конструктор класса
+// Validation. Конструктор принимает поля email, date, path и инициализирует их как
+// поля класса. В каждом методе напишите соответствующую проверку
+
+interface iValidation2 {
+  email: string;
+  date: string;
+  path: string;
+}
+
+class iValidation {
+  email: string;
+  date: string;
+  path: string;
+
+  constructor(email, date, path) {
+    this.email = email;
+    this.date = date;
+    this.path = path;
+
+    this.isValidDate();
+    this.isValidEmail();
+    this.isValidPath();
+  }
+
+  private isValidEmail(): void {
+    console.log(
+      /^[\w.]+@[a-z]+.[a-z]{2,}$/gm.test(this.email)
+        ? "valid email"
+        : "invalid email"
+    );
+  }
+
+  private isValidDate(): void {
+    console.log(
+      /^[0-9]{2,2}\/[0-9]{2,2}\/[0-9]{2,2}$/gm.test(this.date)
+        ? "valid date"
+        : "invalid date"
+    );
+  }
+
+  private isValidPath() {
+    console.log(
+      /^[A-Z]{1}\:\\\\[\a-z\\а-я А-Я]+\.[a-z]{2,4}$/gm.test(this.path)
+        ? "valid path"
+        : "invalid path!"
+    );
   }
 }
 
-const passwordGenerator = new PasswordGenerator();
-
-console.log(passwordGenerator.generatePassword<number>(5));
+const ivalidation: iValidation2 = new iValidation(
+  "qwe@fsa.com",
+  "01/02/23",
+  "C:\\Users\\Dev\\OneDrive\\Рабочий стол\\daily\\Templates\\05. typescript\\app.js"
+);
