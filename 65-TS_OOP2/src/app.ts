@@ -318,43 +318,64 @@
 // базового класса и записать в переменную используя метод super. Далее
 // дополняем переопределенный метод отображением результата в console
 
-// interface iPwd {}
+interface iPwd {
+  showPwd(): string;
+}
 
-// class Pwd {
-//   showPwd() {}
-// }
+class Pwd implements iPwd {
+  showPwd(): string {
+    let pwd: string = "";
 
-// class Validation extends Pwd {
-//   showPwd() {}
-// }
+    for (let i = 0; i < 8; i++) {
+      pwd += Math.round(Math.random() * 10);
+    }
 
-// const validation = new Validation();
+    return pwd;
+  }
+}
+
+class Validation extends Pwd implements iPwd {
+  override showPwd(): string {
+    const result: string = super.showPwd();
+
+    console.log(result);
+
+    return result.split("").reverse().join("");
+  }
+}
+
+const pwd = new Pwd();
+const validation = new Validation();
+
+console.log(pwd.showPwd());
+console.log("/////////////////");
+console.log(validation.showPwd());
 
 // 12. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
 // controller, service, repository. Цепочка взаимодействия между методами
 // следующая: controller -> service -> repository, где:
 
-interface iServerGetAll {
-  controller(): number[];
-  service(): number[];
-  repository(): number[];
-}
+// interface iServerGetAll {
+//   controller(): number[];
+//   service(): number[];
+//   repository(): number[];
+// }
 
-class ServerGetAll {
-  controller(): number[] {
-    return this.service();
-  }
+// class ServerGetAll {
+//   controller(): number[] {
+//     return this.service();
+//   }
 
-  service(): number[] {
-    return this.repository();
-  }
+//   service(): number[] {
+//     return this.repository();
+//   }
 
-  repository() {
-    const arr: number[] = [1, 2, 3, 4];
-    return arr;
-  }
-}
+//   repository() {
+//     const arr: number[] = [1, 2, 3, 4];
+//     return arr;
+//   }
+// }
 
-const serverGetAll: iServerGetAll = new ServerGetAll();
+// const serverGetAll: iServerGetAll = new ServerGetAll();
 
-console.log(serverGetAll.controller());
+// console.log(serverGetAll.controller());
