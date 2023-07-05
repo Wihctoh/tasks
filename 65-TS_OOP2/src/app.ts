@@ -318,38 +318,74 @@
 // базового класса и записать в переменную используя метод super. Далее
 // дополняем переопределенный метод отображением результата в console
 
-interface iPwd {
-  showPwd(): string;
-}
+// interface iPwd {
+//   showPwd(): string;
+// }
 
-class Pwd implements iPwd {
-  showPwd(): string {
-    let pwd: string = "";
+// class Pwd implements iPwd {
+//   showPwd(): string {
+//     let pwd: string = "";
 
-    for (let i = 0; i < 8; i++) {
-      pwd += Math.round(Math.random() * 10);
-    }
+//     for (let i = 0; i < 8; i++) {
+//       pwd += Math.round(Math.random() * 10);
+//     }
 
-    return pwd;
-  }
-}
+//     return pwd;
+//   }
+// }
 
-class Validation extends Pwd implements iPwd {
-  override showPwd(): string {
-    const result: string = super.showPwd();
+// class Validation extends Pwd implements iPwd {
+//   override showPwd(): string {
+//     const result: string = super.showPwd();
 
-    console.log(result);
+//     console.log(result);
 
-    return result.split("").reverse().join("");
-  }
-}
+//     return result.split("").reverse().join("");
+//   }
+// }
 
-const pwd = new Pwd();
-const validation = new Validation();
+// const pwd = new Pwd();
+// const validation = new Validation();
 
-console.log(pwd.showPwd());
-console.log("/////////////////");
-console.log(validation.showPwd());
+// console.log(pwd.showPwd());
+// console.log("/////////////////");
+// console.log(validation.showPwd());
+
+// 11. Создайте абстрактный класс University, который содержит абстрактный метод
+// getStudentById и поле students – массив объектов. Student – класс наследник,
+// реализующий абстрактный метод getStudentById.
+
+// interface iUniversity {
+//   id: number;
+//   name: string;
+// }
+
+// abstract class University {
+//   abstract getStudentById();
+
+//   students: iUniversity[] = [
+//     { id: 0, name: "Kate" },
+//     { id: 1, name: "Jack" },
+//     { id: 2, name: "Slava" },
+//   ];
+// }
+
+// class Students extends University {
+//   id: number;
+
+//   getStudentById(): void {
+//     const result: iUniversity[] = this.students.filter(
+//       (el) => el.id === this.id
+//     );
+
+//     console.log(result);
+//   }
+// }
+
+// const students = new Students();
+
+// students.id = 1;
+// students.getStudentById();
 
 // 12. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
 // controller, service, repository. Цепочка взаимодействия между методами
