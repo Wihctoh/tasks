@@ -318,42 +318,79 @@
 // базового класса и записать в переменную используя метод super. Далее
 // дополняем переопределенный метод отображением результата в console
 
-interface iPwd {
-  showPwd(): string;
-}
+// interface iPwd {
+//   showPwd(): string;
+// }
 
-class Pwd implements iPwd {
-  showPwd(): string {
-    let pwd: string = "";
+// class Pwd implements iPwd {
+//   showPwd(): string {
+//     let pwd: string = "";
 
-    for (let i = 0; i < 8; i++) {
-      pwd += Math.round(Math.random() * 10);
-    }
+//     for (let i = 0; i < 8; i++) {
+//       pwd += Math.round(Math.random() * 10);
+//     }
 
-    return pwd;
-  }
-}
+//     return pwd;
+//   }
+// }
 
-class Validation extends Pwd implements iPwd {
-  override showPwd(): string {
-    const result: string = super.showPwd();
+// class Validation extends Pwd implements iPwd {
+//   override showPwd(): string {
+//     const result: string = super.showPwd();
 
-    console.log(result);
+//     console.log(result);
 
-    return result.split("").reverse().join("");
-  }
-}
+//     return result.split("").reverse().join("");
+//   }
+// }
 
-const pwd = new Pwd();
-const validation = new Validation();
+// const pwd = new Pwd();
+// const validation = new Validation();
 
-console.log(pwd.showPwd());
-console.log("/////////////////");
-console.log(validation.showPwd());
+// console.log(pwd.showPwd());
+// console.log("/////////////////");
+// console.log(validation.showPwd());
+
+// 11. Создайте абстрактный класс University, который содержит абстрактный метод
+// getStudentById и поле students – массив объектов. Student – класс наследник,
+// реализующий абстрактный метод getStudentById.
+
+// interface iUniversity {
+//   id: number;
+//   name: string;
+// }
+
+// abstract class University {
+//   abstract getStudentById();
+
+//   students: iUniversity[] = [
+//     { id: 0, name: "Kate" },
+//     { id: 1, name: "Jack" },
+//     { id: 2, name: "Slava" },
+//   ];
+// }
+
+// class Students extends University {
+//   id: number;
+
+//   getStudentById(): void {
+//     const result: iUniversity[] = this.students.filter(
+//       (el) => el.id === this.id
+//     );
+
+//     console.log(result);
+//   }
+// }
+
+// const students = new Students();
+
+// students.id = 1;
+// students.getStudentById();
 
 // 12. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
 // controller, service, repository. Цепочка взаимодействия между методами
 // следующая: controller -> service -> repository, где:
+// Необходимо вывести в консоль массив из репозитория
 
 // interface iServerGetAll {
 //   controller(): number[];
@@ -379,3 +416,64 @@ console.log(validation.showPwd());
 // const serverGetAll: iServerGetAll = new ServerGetAll();
 
 // console.log(serverGetAll.controller());
+
+// 13. Реализуйте класс ServerPost. Обязательными функциями считаются функции
+// middleware, controller, service, repository. Цепочка взаимодействия между
+// методами следующая: middleware -> controller -> service -> repository, где:
+// Задание:
+// на вход подается JSON вида: `{ "email": "Test", "pws": "test" }`
+// Необходимо добавить в массив БД объект только в том случае, если нет
+// совпадений по email.
+interface iData {
+  id: number;
+  email: string;
+  pws: string;
+}
+
+interface iServerPost {
+  middleware(): iData[];
+  controller(): iData[];
+  service(): iData[];
+  repository(): iData[];
+}
+
+class ServerPost {
+  middleware(): iData[] {
+    return this.controller();
+  }
+
+  controller(): iData[] {
+    return this.service();
+  }
+
+  service(): iData[] {
+    return this.repository();
+  }
+
+  repository(): iData[] {
+    const data: iData[] = [
+      { id: 0, email: "Test0", pws: "test0" },
+      { id: 1, email: "Test1", pws: "test1" },
+      { id: 2, email: "Test2", pws: "test2" },
+    ];
+
+    const filtered: iData[] = data.filter((el) => el.email === arr.email);
+
+    if (!filtered.length) {
+      data.push({ id: data.length, ...arr });
+    } else console.log("error");
+
+    return data;
+  }
+}
+
+const arr: iData = JSON.parse(`{ "email": "Test", "pws": "test" }`);
+
+const serverPost: iServerPost = new ServerPost();
+
+console.log(serverPost.middleware());
+
+//15 Создайте класс Cat, представляющий кошку. У класса Cat должны быть приватные
+// свойства name, age и color. Реализуйте методы getName, getAge и getColor,
+// которые будут возвращать соответствующие свойства. Создайте несколько
+// объектов класса Cat и выведите их данные.

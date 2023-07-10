@@ -3,46 +3,35 @@
 // реализует метод calculateArea() для расчета площади прямоугольника. Затем
 // создайте объект класса Rectangle и выведите его площадь на экран. (для
 // вычисления площади прямоугольника S = height * wigth)
-class Pwd {
-    showPwd() {
-        let pwd = "";
-        for (let i = 0; i < 8; i++) {
-            pwd += Math.round(Math.random() * 10);
+class ServerPost {
+    middleware() {
+        return this.controller();
+    }
+    controller() {
+        return this.service();
+    }
+    service() {
+        return this.repository();
+    }
+    repository() {
+        const data = [
+            { id: 0, email: "Test0", pws: "test0" },
+            { id: 1, email: "Test1", pws: "test1" },
+            { id: 2, email: "Test2", pws: "test2" },
+        ];
+        const filtered = data.filter((el) => el.email === arr.email);
+        if (!filtered.length) {
+            data.push({ id: data.length, ...arr });
         }
-        return pwd;
+        else
+            console.log("error");
+        return data;
     }
 }
-class Validation extends Pwd {
-    showPwd() {
-        const result = super.showPwd();
-        console.log(result);
-        return result.split("").reverse().join("");
-    }
-}
-const pwd = new Pwd();
-const validation = new Validation();
-console.log(pwd.showPwd());
-console.log("/////////////////");
-console.log(validation.showPwd());
-// 12. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
-// controller, service, repository. Цепочка взаимодействия между методами
-// следующая: controller -> service -> repository, где:
-// interface iServerGetAll {
-//   controller(): number[];
-//   service(): number[];
-//   repository(): number[];
-// }
-// class ServerGetAll {
-//   controller(): number[] {
-//     return this.service();
-//   }
-//   service(): number[] {
-//     return this.repository();
-//   }
-//   repository() {
-//     const arr: number[] = [1, 2, 3, 4];
-//     return arr;
-//   }
-// }
-// const serverGetAll: iServerGetAll = new ServerGetAll();
-// console.log(serverGetAll.controller());
+const arr = JSON.parse(`{ "email": "Test", "pws": "test" }`);
+const serverPost = new ServerPost();
+console.log(serverPost.middleware());
+//15 Создайте класс Cat, представляющий кошку. У класса Cat должны быть приватные
+// свойства name, age и color. Реализуйте методы getName, getAge и getColor,
+// которые будут возвращать соответствующие свойства. Создайте несколько
+// объектов класса Cat и выведите их данные.
