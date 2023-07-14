@@ -97,9 +97,19 @@ describe("", () => {
     const result = removeDouble([
       "+375298888888",
       "+375298888888",
-      "375298888889",
-      "375298888899",
+      "+375298888889",
+      "+375298888899",
     ]);
-    expect(result).toEqual(["+375298888888", "375298888889", "375298888899"]);
+    expect(result).toEqual(["+375298888888", "+375298888889", "+375298888899"]);
+  });
+
+  test("", () => {
+    const result = removeDouble([]);
+    expect(result).toEqual("empry values!");
+  });
+
+  test("", () => {
+    const result = removeDouble(["+375298888888", 2131]);
+    expect(result).toBe("value cant be a number type!");
   });
 });

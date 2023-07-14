@@ -71,15 +71,25 @@ function doArrObj(arrObj) {
 // Написать тест для функции
 
 function removeDouble(arr) {
-  const resArr = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    if (!resArr.includes(arr[i])) {
-      resArr.push(arr[i]);
+  try {
+    if (arr.length === 0) throw new Error("empry values!");
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === "number")
+        throw new Error("value cant be a number type!");
     }
-  }
 
-  return resArr;
+    const resArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (!resArr.includes(arr[i])) {
+        resArr.push(arr[i]);
+      }
+    }
+
+    return resArr;
+  } catch (error) {
+    return error.message;
+  }
 }
 
 module.exports = { doDegree, multiply, doSum, doArrObj, removeDouble };
