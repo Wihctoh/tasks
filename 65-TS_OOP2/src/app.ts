@@ -424,54 +424,63 @@
 // на вход подается JSON вида: `{ "email": "Test", "pws": "test" }`
 // Необходимо добавить в массив БД объект только в том случае, если нет
 // совпадений по email.
-interface iData {
-  id: number;
-  email: string;
-  pws: string;
-}
 
-interface iServerPost {
-  middleware(): iData[];
-  controller(): iData[];
-  service(): iData[];
-  repository(): iData[];
-}
+// interface iData {
+//   id: number;
+//   email: string;
+//   pws: string;
+// }
 
-class ServerPost {
-  middleware(): iData[] {
-    return this.controller();
-  }
+// interface iServerPost {
+//   middleware(): iData[];
+//   controller(): iData[];
+//   service(): iData[];
+//   repository(): iData[];
+// }
 
-  controller(): iData[] {
-    return this.service();
-  }
+// class ServerPost {
+//   middleware(): iData[] {
+//     return this.controller();
+//   }
 
-  service(): iData[] {
-    return this.repository();
-  }
+//   controller(): iData[] {
+//     return this.service();
+//   }
 
-  repository(): iData[] {
-    const data: iData[] = [
-      { id: 0, email: "Test0", pws: "test0" },
-      { id: 1, email: "Test1", pws: "test1" },
-      { id: 2, email: "Test2", pws: "test2" },
-    ];
+//   service(): iData[] {
+//     return this.repository();
+//   }
 
-    const filtered: iData[] = data.filter((el) => el.email === arr.email);
+//   repository(): iData[] {
+//     const data: iData[] = [
+//       { id: 0, email: "Test0", pws: "test0" },
+//       { id: 1, email: "Test1", pws: "test1" },
+//       { id: 2, email: "Test2", pws: "test2" },
+//     ];
 
-    if (!filtered.length) {
-      data.push({ id: data.length, ...arr });
-    } else console.log("error");
+//     const filtered: iData[] = data.filter((el) => el.email === arr.email);
 
-    return data;
-  }
-}
+//     if (!filtered.length) {
+//       data.push({ id: data.length, ...arr });
+//     } else console.log("error");
 
-const arr: iData = JSON.parse(`{ "email": "Test", "pws": "test" }`);
+//     return data;
+//   }
+// }
 
-const serverPost: iServerPost = new ServerPost();
+// const arr: iData = JSON.parse(`{ "email": "Test", "pws": "test" }`);
 
-console.log(serverPost.middleware());
+// const serverPost: iServerPost = new ServerPost();
+
+// console.log(serverPost.middleware());
+
+// 14. Создайте класс Counter, который будет представлять счетчик. У класса Counter
+// должно быть свойство count (первоначальное значение задается сеттером) и
+// методы increment и decrement, которые будут увеличивать и уменьшать значение
+// счетчика соответственно на 1. Создайте объект класса Counter и проверьте работу
+// методов.
+
+class Counter {}
 
 //15 Создайте класс Cat, представляющий кошку. У класса Cat должны быть приватные
 // свойства name, age и color. Реализуйте методы getName, getAge и getColor,

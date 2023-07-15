@@ -1,4 +1,4 @@
-const { doDegree, multiply, doSum, doArrObj } = require("./app");
+const { doDegree, multiply, doSum, doArrObj, removeDouble } = require("./app");
 
 describe("do degree:", () => {
   test("", () => {
@@ -36,6 +36,13 @@ describe("do degree:", () => {
   test("", () => {
     const result = multiply([]);
     expect(result).toBe("arr is empty!");
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const res = doSum([1, 2, 3]);
+    expect(res).toBe(6);
   });
 });
 
@@ -82,5 +89,17 @@ describe("do degree:", () => {
 
     const result = doArrObj(item);
     expect(result).toBe("elements not a number!");
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const result = removeDouble([
+      "+375298888888",
+      "+375298888888",
+      "375298888889",
+      "375298888899",
+    ]);
+    expect(result).toEqual(["+375298888888", "375298888889", "375298888899"]);
   });
 });

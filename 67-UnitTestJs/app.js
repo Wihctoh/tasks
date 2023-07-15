@@ -65,4 +65,21 @@ function doArrObj(arrObj) {
   }
 }
 
-module.exports = { doDegree, multiply, doSum, doArrObj };
+// 5. У вас есть массив строковых значений, состоящий из номеров телефонов.
+// Необходимо вывести значения массива без дубликатов. Добавить необходимые
+// проверки.
+// Написать тест для функции
+
+function removeDouble(arr) {
+  const resArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!resArr.includes(arr[i])) {
+      resArr.push(arr[i]);
+    }
+  }
+
+  return resArr;
+}
+
+module.exports = { doDegree, multiply, doSum, doArrObj, removeDouble };
