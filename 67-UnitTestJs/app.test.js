@@ -1,4 +1,11 @@
-const { doDegree, multiply, doSum, doArrObj, removeDouble } = require("./app");
+const {
+  doDegree,
+  multiply,
+  doSum,
+  doArrObj,
+  removeDouble,
+  doubleValuesInObj,
+} = require("./app");
 
 describe("do degree:", () => {
   test("", () => {
@@ -111,5 +118,22 @@ describe("", () => {
   test("", () => {
     const result = removeDouble(["+375298888888", 2131]);
     expect(result).toBe("value cant be a number type!");
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const result = doubleValuesInObj({ one: 1, two: 2, three: 3 });
+    expect(result).toEqual({ one: 2, two: 4, three: 6 });
+  });
+
+  test("", () => {
+    const result = doubleValuesInObj({});
+    expect(result).toBe("empty");
+  });
+
+  test("", () => {
+    const result = doubleValuesInObj({ one: 1, two: "qwer", three: 3 });
+    expect(result).toBe("not a number");
   });
 });
