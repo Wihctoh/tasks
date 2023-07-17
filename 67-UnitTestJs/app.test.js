@@ -5,6 +5,8 @@ const {
   doArrObj,
   removeDouble,
   doubleValuesInObj,
+  newObjValues,
+  keyValues,
 } = require("./app");
 
 describe("do degree:", () => {
@@ -129,11 +131,35 @@ describe("", () => {
 
   test("", () => {
     const result = doubleValuesInObj({});
-    expect(result).toBe("empty");
+    expect(result).toBe("empty values!");
   });
 
   test("", () => {
     const result = doubleValuesInObj({ one: 1, two: "qwer", three: 3 });
-    expect(result).toBe("not a number");
+    expect(result).toBe("values in not a number!");
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const result = newObjValues({ one: 1, two: 2, three: 3, four: 4 });
+    expect(result).toEqual([2, 4]);
+  });
+
+  test("", () => {
+    const result = newObjValues({});
+    expect(result).toBe("Empty values!");
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const result = keyValues({ one: 1, two: 2, three: 3, four: "q" });
+    expect(result).toEqual(3);
+  });
+
+  test("", () => {
+    const result = keyValues({});
+    expect(result).toBe("empty values!");
   });
 });

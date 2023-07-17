@@ -96,15 +96,28 @@ function removeDouble(arr) {
 //   значение) где значение число и вывести количество. Добавить необходимые
 //   проверки.
 
+function keyValues(obj) {
+  try {
+    if (Object.entries(obj).length === 0) throw new Error("empty values!");
+
+    const filtered = Object.values(obj).filter((el) => typeof el === "number");
+
+    return filtered.length;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 // Написать тест для функции
 
 function doubleValuesInObj(obj) {
   try {
-    if (Object.values(obj).length === 0) throw new Error("empty");
+    if (Object.values(obj).length === 0) throw new Error("empty values!");
 
     for (let key in obj) {
-      if (typeof obj[key] !== "number") throw new Error("not a number");
+      if (typeof obj[key] !== "number")
+        throw new Error("values in not a number!");
 
       obj[key] = obj[key] * 2;
     }
@@ -118,6 +131,18 @@ function doubleValuesInObj(obj) {
 // 8. На входе статичный объект. Необходимо сформировать массив из всх четных
 // значений объекта.
 // Написать тест для функции
+
+function newObjValues(obj) {
+  try {
+    if (Object.entries(obj).length === 0) throw new Error("Empty values!");
+
+    const newArr = Object.values(obj).filter((el) => el % 2 === 0);
+
+    return newArr;
+  } catch (error) {
+    return error.message;
+  }
+}
 
 // 9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
 // разбить данный одномерный массив на маленькие массивы в зависимости от
@@ -146,4 +171,6 @@ module.exports = {
   doArrObj,
   removeDouble,
   doubleValuesInObj,
+  newObjValues,
+  keyValues,
 };
