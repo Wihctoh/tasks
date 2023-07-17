@@ -7,6 +7,7 @@ const {
   doubleValuesInObj,
   newObjValues,
   keyValues,
+  doArray,
 } = require("./app");
 
 describe("do degree:", () => {
@@ -160,6 +161,18 @@ describe("", () => {
 
   test("", () => {
     const result = keyValues({});
+    expect(result).toBe("empty values!");
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const result = doArray([1, 2, 3, 4, 5, 6]);
+    expect(result).toEqual([[1], [2], [3], [4], [5], [6]]);
+  });
+
+  test("", () => {
+    const result = doArray([]);
     expect(result).toBe("empty values!");
   });
 });

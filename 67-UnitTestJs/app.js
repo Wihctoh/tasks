@@ -155,6 +155,25 @@ function newObjValues(obj) {
 // 6 -> [[1, 2, 3, 4, 5, 6]]
 // Написать тест для функции
 
+function doArray(arr) {
+  try {
+    if (arr.length === 0) throw new Error("empty values!");
+
+    const resArr = [];
+    let arr1 = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      arr1.push(arr[i]);
+      resArr.push(arr1);
+
+      arr1 = [];
+    }
+
+    return resArr;
+  } catch (error) {
+    return error.message;
+  }
+}
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и
 // возвращает массив без каких-либо элементов с одинаковым значением рядом
 // друг с другом.
@@ -173,4 +192,5 @@ module.exports = {
   doubleValuesInObj,
   newObjValues,
   keyValues,
+  doArray,
 };
