@@ -4,6 +4,7 @@ import {
   capitalizeString,
   StringArray,
   NumberArray,
+  flattenArray,
 } from "./app";
 
 describe("", () => {
@@ -86,5 +87,12 @@ describe("", () => {
     const result = numberArray.getEvenNumbers();
 
     expect(result).toEqual([2, 4]);
+  });
+});
+
+describe("", () => {
+  test("", () => {
+    const res = flattenArray([1, 2, 3, [6, 5], ["qwe", "asd"]]);
+    expect(res).toEqual([1, 2, 3, 6, 5, "qwe", "asd"]);
   });
 });

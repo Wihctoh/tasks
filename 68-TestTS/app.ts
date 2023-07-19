@@ -56,6 +56,16 @@ function capitalizeString(str: string | number): string {
   }
 }
 
+// 4. Напишите функцию flattenArray(array: any[]): any[], которая принимает массив, в
+// котором могут быть вложенные массивы, и возвращает новый массив, в котором
+// все элементы являются плоским списком без вложенности.
+
+function flattenArray(array) {
+  const arr = [...array];
+
+  return arr;
+}
+
 // 8. Создайте класс StringArray, который имеет свойство array (массив строк) и методы:
 // getLongestWord(): string - возвращает самое длинное слово из массива.
 // getUniqueWords(): string[] - возвращает массив уникальных слов из массива.
@@ -135,4 +145,5 @@ export {
   capitalizeString,
   StringArray,
   NumberArray,
+  flattenArray,
 };
