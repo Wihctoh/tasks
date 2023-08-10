@@ -6,7 +6,7 @@ import React from "react";
 const Task9 = () => {
   const colorArr = ["red", "white", "blue"];
 
-  function swithColor(event) {
+  function switchColor(event) {
     const colorIndex = Math.round(Math.random() * colorArr.length);
 
     event.target.style.backgroundColor = colorArr[colorIndex];
@@ -14,7 +14,7 @@ const Task9 = () => {
 
   return (
     <div>
-      <button onClick={swithColor}>click me!</button>
+      <button onClick={switchColor}>click me!</button>
     </div>
   );
 };
