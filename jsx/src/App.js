@@ -1,5 +1,6 @@
 import "./App.css";
-import Task6 from "./pages/useState/Task6";
+import Task7 from "./pages/useState/Task7";
+// import Task6 from "./pages/useState/Task6";
 // import Task4 from "./pages/useState/Task4";
 // import Task1Us from "./pages/useState/Task1Us";
 // import Task2Us from "./pages/useState/Task2Us";
@@ -33,7 +34,8 @@ function App() {
       {/* <Task3 /> */}
       {/* <Task4 /> */}
       {/* <Task5 /> */}
-      <Task6 />
+      {/* <Task6 /> */}
+      <Task7 />
     </>
   );
 }
