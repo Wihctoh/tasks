@@ -1,4 +1,7 @@
 import "./App.css";
+import Task7 from "./pages/useState/Task7";
+// import Task6 from "./pages/useState/Task6";
+// import Task4 from "./pages/useState/Task4";
 // import Task1Us from "./pages/useState/Task1Us";
 import Task2Us from "./pages/useState/Task2Us";
 import Task3 from "./pages/useState/Task3";
