@@ -3,6 +3,7 @@ import "./App.css";
 import Task2Us from "./pages/useState/Task2Us";
 import Task3 from "./pages/useState/Task3";
 import Task5 from "./pages/useState/Task5";
+import Task6 from "./pages/useState/Task6";
 // import Task1 from "./pages/jsx-task/Task1";
 // import Task2 from "./pages/jsx-task/Task2";
 // import Task3 from "./pages/jsx-task/Task3";
@@ -30,6 +31,7 @@ function App() {
       <Task2Us />
       <Task3 />
       <Task5 />
+      <Task6 />
     </>
   );
 }
