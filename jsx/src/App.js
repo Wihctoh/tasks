@@ -1,5 +1,12 @@
 import "./App.css";
-import Task13 from "./pages/useState/task13";
+// import Task19 from "./pages/useState/Task19";
+import Task20 from "./pages/useState/Task20";
+// import Task18 from "./pages/useState/Task18";
+// import Task14 from "./pages/useState/Task14";
+// import Task15 from "./pages/useState/Task15";
+// import Task16 from "./pages/useState/Task16";
+// import Task17 from "./pages/useState/Task17";
+// import Task13 from "./pages/useState/task13";
 // import Task10 from "./pages/useState/Task10";
 // import Task11 from "./pages/useState/Task11";
 // import Task12 from "./pages/useState/Task12";
@@ -46,7 +53,14 @@ function App() {
       <Task10 />
       <Task11 /> */}
       {/* <Task12 /> */}
-      <Task13 />
+      {/* <Task13 /> */}
+      {/* <Task14 /> */}
+      {/* <Task15 /> */}
+      {/* <Task16 /> */}
+      {/* <Task17 /> */}
+      {/* <Task18 /> */}
+      {/* <Task19 /> */}
+      <Task20 />
     </>
   );
 }
