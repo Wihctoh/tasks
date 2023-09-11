@@ -1,6 +1,15 @@
 import "./App.css";
+// import Task25 from "./pages/useState/Task25";
+// import Task26 from "./pages/useState/Task26";
+// import Task27 from "./pages/useState/Task27";
+import Task28 from "./pages/useState/Task28";
+import Task29 from "./pages/useState/Task29";
 // import Task19 from "./pages/useState/Task19";
-import Task20 from "./pages/useState/Task20";
+// import Task20 from "./pages/useState/Task20";
+// import Task21 from "./pages/useState/Task21";
+// import Task22 from "./pages/useState/Task22";
+// import Task23 from "./pages/useState/Task23";
+// import Task24 from "./pages/useState/Task24";
 // import Task18 from "./pages/useState/Task18";
 // import Task14 from "./pages/useState/Task14";
 // import Task15 from "./pages/useState/Task15";
@@ -60,7 +69,16 @@ function App() {
       {/* <Task17 /> */}
       {/* <Task18 /> */}
       {/* <Task19 /> */}
-      <Task20 />
+      {/* <Task20 /> */}
+      {/* <Task21 /> */}
+      {/* <Task22 /> */}
+      {/* <Task23 /> */}
+      {/* <Task24 /> */}
+      {/* <Task25 /> */}
+      {/* <Task26 /> */}
+      {/* <Task27 /> */}
+      <Task28 />
+      <Task29 />
     </>
   );
 }
