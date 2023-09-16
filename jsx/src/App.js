@@ -1,10 +1,10 @@
 import "./App.css";
-import Task39 from "./pages/hooks/Task39";
+import Task1 from "./pages/hooks/Task1";
 
 function App() {
   return (
     <>
-      <Task39 />
+      <Task1 />
     </>
   );
 }
