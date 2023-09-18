@@ -1,18 +1,10 @@
 import "./App.css";
-import Task35 from "./pages/useState/Task35";
-import myContext from "./context/context";
+import Task39 from "./pages/hooks/Task39";
 
 function App() {
-  const obj = {
-    lang1: "Hello",
-    lang2: "Привет",
-  };
-
   return (
     <>
-      <myContext.Provider value={obj}>
-        <Task35 />
-      </myContext.Provider>
+      <Task39 />
     </>
   );
 }
